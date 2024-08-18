@@ -11,7 +11,7 @@ Options()
 // Maira was renamed so that it is applied to the radiocarbon samples.
 //
 // Note, some boundary and phase names have been changed here to avoid
-// duplicate names between sites. Duplicate names were note an issue
+// duplicate names between sites. Duplicate names were not an issue
 // in Kennett et al.'s corrected code, as each site was modeled in a
 // different file. Here, they all exist in a single file/model. However,
 // renaming boundaries and phases has no effect on the model results.
