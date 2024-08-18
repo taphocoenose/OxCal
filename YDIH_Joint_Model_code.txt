@@ -1,0 +1,2049 @@
+Options()
+ {
+  Curve="IntCal13";
+  Resolution=5;
+  BCAD=FALSE;
+  KIterations=100;
+ };
+// The following code fixes two apparent syntax errors in Kennett
+// et al.'s corrected code. First, extraneous brackets were removed
+// from the Mucunuque code. Second, the outlier model name for Santa
+// Maira was renamed so that it is applied to the radiocarbon samples.
+//
+// Note, some boundary and phase names have been changed here to avoid
+// duplicate names between sites. Duplicate names were note an issue
+// in Kennett et al.'s corrected code, as each site was modeled in a
+// different file. Here, they all exist in a single file/model. However,
+// renaming boundaries and phases has no effect on the model results.
+//
+ Plot()
+ {
+  //
+  // AALSTERHUT MODEL
+  //
+  Outlier_Model("AalsterhutCharcoal",Exp(1,-10,2),U(0,3),"t");
+  Sequence("Aalsterhut")
+  {
+   Boundary("Aalsterhut1");
+   Sequence("AalsterhutND-rich layer")
+   {
+    R_Date("GrA-49515",11020,75)
+    {
+     Outlier("AalsterhutCharcoal",1);
+    };
+    R_Date("GrA-49509",10865,55)
+    {
+     Outlier("AalsterhutCharcoal",1);
+    };
+    R_Date("GrA-49524",10840,75)
+    {
+     Outlier("AalsterhutCharcoal",1);
+    };
+   };
+   Boundary("Aalsterhut_YDB_age");
+   Sequence("AalsterhutAbove NDs")
+   {
+    R_Date("GrA-49575",10900,50)
+    {
+     Outlier("AalsterhutCharcoal",1);
+    };
+    Boundary();
+    R_Date("GrA-49569",10895,45)
+    {
+     Outlier("AalsterhutCharcoal",1);
+    };
+    R_Date("GrA-49514",10880,110)
+    {
+     Outlier("AalsterhutCharcoal",1);
+    };
+    R_Date("GrA-49527",10960,60)
+    {
+     Outlier("AalsterhutCharcoal",1);
+    };
+    R_Date("GrA-49507",10920,50)
+    {
+     Outlier("AalsterhutCharcoal",1);
+    };
+    R_Date("GrA-49573",10860,45)
+    {
+     Outlier("AalsterhutCharcoal",1);
+    };
+    R_Date("GrA-49574",10845,45)
+    {
+     Outlier("AalsterhutCharcoal",1);
+    };
+    Boundary("AalsterhutYDB_top");
+    R_Date("GrA-49516",10765,50)
+    {
+     Outlier("AalsterhutCharcoal",1);
+    };
+    R_Date("GrA-49529",10755,55)
+    {
+     Outlier("AalsterhutCharcoal",1);
+    };
+    R_Date("GrA-49521",10765,50)
+    {
+     Outlier("AalsterhutCharcoal",1);
+    };
+    R_Date("GrA-49570",10735,45)
+    {
+     Outlier("AalsterhutCharcoal",1);
+    };
+   };
+   Boundary("AalsterhutYDB_base");
+  };
+  Sequence("Aalsterhut2")
+  {
+   Boundary();
+   Date("=Aalsterhut1");
+   Date("Aalsterhut_YDB_layer");
+   Date("=Aalsterhut_YDB_age");
+   Boundary();
+  };
+  Page();
+  //
+  // ABU HUREYRA MODEL
+  //
+  Outlier_Model("AbuHureyraGeneral",Exp(1,-10,0.5),U(0,3),"t");
+  Sequence("Abu Hureyra")
+  {
+   Boundary();
+   Phase("AbuHureyra1")
+   {
+    R_Date("OxA-883",11450,300)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-468",11090,150)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-387",11070,160)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-469",10920,140)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-172",10900,200)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-470",10820,160)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-882",6100,120)
+    {
+     Outlier();
+     color="blue";
+    };
+   };
+   R_Date("Abu_Hureyra_UCIAMS_105429",11070,40)
+   {
+    Outlier("AbuHureyraGeneral",1);
+   };
+   Phase("AbuHureyra2")
+   {
+    R_Date("BM-1718R",11140,140)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-430",11020,150)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-6685",10930,120)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-474",10930,150)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-472",10750,170)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-431",10680,150)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-471",10620,150)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-434",10490,150)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-435",10450,180)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-397",10420,140)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-6996",9860,220)
+    {
+     Outlier();
+     color="blue";
+    };
+    R_Date("OxA-476",9600,200)
+    {
+     Outlier();
+     color="blue";
+    };
+    R_Date("OxA-7122",8290,75)
+    {
+     Outlier();
+     color="blue";
+    };
+    R_Date("OxA-5843",8275,65)
+    {
+     Outlier();
+     color="blue";
+    };
+    R_Date("OxA-5842",8260,75)
+    {
+     Outlier();
+     color="blue";
+    };
+    R_Date("OxA-6419",8230,80)
+    {
+     Outlier();
+     color="blue";
+    };
+    R_Date("OxA-6418",8115,80)
+    {
+     Outlier();
+     color="blue";
+    };
+   };
+   Boundary();
+   Phase("AbuHureyra3, early")
+   {
+    R_Date("OxA-8718",11140,100)
+    {
+     Outlier();
+     color="blue";
+    };
+    R_Date("OxA-386",10800,160)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-8719",10610,100)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-171",10600,200)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-170",10600,200)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+   };
+   Boundary();
+   Phase("AbuHureyra3, late")
+   {
+    R_Date("OxA-408",10250,160)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-407",10050,180)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("OxA-473",10000,170)
+    {
+     Outlier("AbuHureyraGeneral",1);
+    };
+    R_Date("BM-1719R",9100,100)
+    {
+     Outlier();
+     color="blue";
+    };
+    R_Date("OxA-475",9060,140)
+    {
+     Outlier();
+     color="blue";
+    };
+    R_Date("OxA-6417",8170,90)
+    {
+     Outlier();
+     color="blue";
+    };
+    R_Date("OxA-6336",8140,90)
+    {
+     Outlier();
+     color="blue";
+    };
+   };
+   Boundary();
+  };
+  Page();
+  //
+  // ARLINGTON CANYON MODEL
+  //
+  Outlier_Model("ArlingtonCanyonCharcoal",Exp(1,-10,0),U(0,3),"t");
+  Sequence("Arlington Canyon")
+  {
+   Boundary("ArlingtonCanyonYDB_base");
+   Sequence("ArlingtonCanyonYDB_layer")
+   {
+    R_Date("UCIAMS-36304",11020,25)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+    R_Date("UCIAMS-36305",11235,25)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+    R_Date("UCIAMS-36306",11375,25)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+    R_Date("BETA-161032",10860,70)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+    R_Date("UCIAMS-36959",11075,30)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+    R_Date("UCIAMS-36962",11110,35)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+    R_Date("UCIAMS-36960",11185,30)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+    R_Date("UCIAMS-36961",11440,90)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+    R_Date("UCIAMS-36307",11070,25)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+    R_Date("UCIAMS-42816",11095,25)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+    R_Date("UCIAMS-36308",11095,25)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+    R_Date("UCIAMS-47239",11105,30)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+   };
+   Boundary("ArlingtonCanyonYDB_top");
+   Sequence("ArlingtonCanyonUpper layer")
+   {
+    R_Date("UCIAMS-47238",11105,30)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+    R_Date("UCIAMS-47237",10895,35)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+    R_Date("UCIAMS-47236",12095,40)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+    R_Date("UCIAMS-47235",11040,30)
+    {
+     Outlier("ArlingtonCanyonCharcoal",1);
+    };
+   };
+   Boundary("ArlingtonYDB_base[2]");
+  };
+  Sequence("Arlington Canyon2")
+  {
+   Boundary();
+   Date("=ArlingtonCanyonYDB_base");
+   Date("Arlington_Cyn_YDB_layer");
+   Date("=ArlingtonCanyonYDB_top");
+   Boundary();
+  };
+  Page();
+  //
+  // BARBER CREEK MODEL
+  //
+  Outlier_Model("BarberCreekGeneral",Exp(1,-10,2.5),U(0,3),"t");
+  Sequence("Barber Creek")
+  {
+   Boundary();
+   Sequence("BarberCreekAlluvial")
+   {
+    C_Date("FS2511",calBP(2009-16800),1900)
+    {
+     Outlier("BarberCreekGeneral",1);
+    };
+    C_Date("UW 1909",calBP(2009-14500),1000)
+    {
+     Outlier("BarberCreekGeneral",1);
+    };
+    R_Date("Beta-188956",10500,50)
+    {
+     Outlier("BarberCreekGeneral",1);
+    };
+   };
+   C_Date("Barber_Creek_YDB_age_UW_1908",calBP(2009-12100),700)
+   {
+    Outlier("BarberCreekGeneral",1);
+   };
+   Sequence("BarberCreekEolian")
+   {
+    R_Date("Beta-166238",9860,60)
+    {
+     Outlier("BarberCreekGeneral",1);
+    };
+    C_Date("UW 1907",calBP(2009-9200),700)
+    {
+     Outlier();
+     color="blue";
+    };
+    C_Date("FS2797a",calBP(2009-12800),710)
+    {
+     Outlier("BarberCreekGeneral",1);
+    };
+    C_Date("FS2797b",calBP(2009-10390),620)
+    {
+     Outlier("BarberCreekGeneral",1);
+    };
+    C_Date("UW1963",calBP(2009-9100),700)
+    {
+     Outlier("BarberCreekGeneral",1);
+    };
+    R_Date("Beta-166237",9280,60)
+    {
+     Outlier("BarberCreekGeneral",1);
+    };
+    R_Date("Beta-150188",8940,70)
+    {
+     Outlier("BarberCreekGeneral",1);
+    };
+    R_Date("Beta-166239",8440,50)
+    {
+     Outlier("BarberCreekGeneral",1);
+    };
+    C_Date("FS2476",calBP(2009-9740),590)
+    {
+     Outlier("BarberCreekGeneral",1);
+    };
+    R_Date("Beta-188955",8950,40)
+    {
+     Outlier("BarberCreekGeneral",1);
+    };
+   };
+   Boundary();
+  };
+  Page();
+  //
+  // BIG EDDY MODEL
+  //
+  Outlier_Model("BigEddyCharcoal",Exp(1,-10,0.5),U(0,3),"t");
+  P_Sequence("Big Eddy",0.03,0.01)
+  {
+   Boundary();
+   R_Date("AA-27484",12700,180)
+   {
+    z=396.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-34590",12590,85)
+   {
+    z=386.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-27483",11910,440)
+   {
+    z=384.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-34589",11375,80)
+   {
+    z=383.0;
+    Outlier();
+    color="blue";
+   };
+   R_Date("AA-34588",12250,100)
+   {
+    z=375.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-72613",11960,270)
+   {
+    z=373.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-34587",11930,110)
+   {
+    z=364.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-34586",12320,130)
+   {
+    z=358.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-26655",10940,80)
+   {
+    z=347.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-72608",12450,300)
+   {
+    z=347.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-27482",11190,75)
+   {
+    z=338.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   Date("BigEddyYDB_layer_base")
+   {
+    z=335.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA_26654",10710,85)
+   {
+    z=333.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA_27486",11900,80)
+   {
+    z=331.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-25778",10260,85)
+   {
+    z=328.0;
+    Outlier();
+    color="blue";
+   };
+   Date("BigEddyYDB_layer_top")
+   {
+    z=327.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-27481",11160,75)
+   {
+    z=326.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("Beta-230984",10940,60)
+   {
+    z=322.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-72612",10959,54)
+   {
+    z=322.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-27485",11280,75)
+   {
+    z=322.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-27488",10470,80)
+   {
+    z=321.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-72607",9960,920)
+   {
+    z=317.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-75720",10896,54)
+   {
+    z=315.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-29022",10430,70)
+   {
+    z=313.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-27480",10340,100)
+   {
+    z=308.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-27487",10400,75)
+   {
+    z=306.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-75719",10506,53)
+   {
+    z=303.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-26653",10185,75)
+   {
+    z=298.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-72610",10440,160)
+   {
+    z=294.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-72609",9924,50)
+   {
+    z=286.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-72611",9751,64)
+   {
+    z=285.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   R_Date("AA-35462",9835,70)
+   {
+    z=283.0;
+    Outlier("BigEddyCharcoal",1);
+   };
+   Boundary();
+  };
+// Previous code used Combine to obtain a YDB age with the
+// top and bottom YDB layers, AA_26654, and AA_27486, but
+// this does not work in a joint model. Here, we fall back
+// on the interpolation method similar to other sites.
+  Sequence("Big Eddy2")
+  {
+Boundary();
+   Date("=BigEddyYDB_layer_base");
+   Date("Big_Eddy_YDB_layer");
+   Date("=BigEddyYDB_layer_top");
+Boundary();
+  };
+  Page();
+  //
+  // BLACKVILLE MODEL
+  //
+  Outlier_Model("BlackvilleGeneral",Exp(1,-10,10),U(0,3),"t");
+  Sequence("Blackville")
+  {
+   Boundary();
+   Sequence()
+   {
+    C_Date("Blackville_YDB_age_LB859",calBP(2011-12960),1190)
+    {
+     Outlier("BlackvilleGeneral",1);
+    };
+    C_Date("LB861",calBP(2011-18540),1680)
+    {
+     Outlier();
+     color="blue";
+    };
+    C_Date("LB862",calBP(2011-11500),1030)
+    {
+     Outlier("BlackvilleGeneral",1);
+    };
+    R_Date("Beta 307821",830,30)
+    {
+     Outlier("BlackvilleGeneral",1);
+    };
+   };
+   Boundary();
+  };
+  Page();
+  //
+  // BLACKWATER DRAW MODEL
+  //
+  Outlier_Model("BlackwaterCarbon",Exp(1,-10,1.5),U(0,3),"t");
+  Sequence("Blackwater Draw")
+  {
+   Boundary();
+   Phase("BlackwaterB")
+   {
+    R_Date("AA-2263",12790,160)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-1374",12330,110)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-2262",11810,90)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-1375",11380,150)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+   };
+   Boundary();
+   Phase("BlackwaterC: Clovis")
+   {
+    R_Date("AA-1360",10580,100)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+   };
+   Boundary("Blackwater_YDB_age");
+   Phase("BlackwaterD: Black Mat")
+   {
+    R_Date("AA-1362",10740,100)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-1361",10640,110)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("A-4701",10470,580)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-1370",10260,230)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("A-1372",10250,200)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-1364",10210,110)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-1363",10160,120)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-2261",9950,100)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("A-4702",9870,320)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-1371",9560,180)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-1409",6660,160)
+    {
+     Outlier();
+     color="blue";
+    };
+   };
+   Boundary();
+   Phase("BlackwaterE")
+   {
+    R_Date("AA-1368",11400,190)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-11358",10190,130)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("A-4703",10000,910)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-1366",9890,100)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-1359",9590,120)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("A-4705",9260,320)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-1367",9150,90)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-1365",8230,100)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+   };
+   Boundary();
+   Phase("BlackwaterF+G")
+   {
+    R_Date("AA-1413",8830,120)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-2258",8730,90)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-1643",8230,140)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-2259",7850,110)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+    R_Date("AA-2260",6720,80)
+    {
+     Outlier("BlackwaterCarbon",1);
+    };
+   };
+   Boundary();
+  };
+  Page();
+  //
+  // BULL CREEK MODEL
+  //
+  Outlier_Model("BullCreekCarbon",Exp(1,-10,0),U(0,4),"t");
+  P_Sequence("Bull Creek",0.05,0.5)
+  {
+   Boundary();
+   Date("BullCreekYDB_base")
+   {
+    z=307;
+    Outlier("BullCreekCarbon",1);
+   };
+   R_Date("Bull_Creek_YDB_layer",11070, 60)
+   {
+    z=298.0;
+    Outlier("BullCreekCarbon",1);
+   };
+   Date("BullCreekYDB_top")
+   {
+    z=298;
+    Outlier("BullCreekCarbon",1);
+   };
+   R_Date("Beta-262540",10870, 70)
+   {
+    z=293.5;
+    Outlier("BullCreekCarbon",1);
+   };
+   R_Date("Beta-184853",10350, 210)
+   {
+    z=270.5;
+    Outlier();
+    color="blue";
+   };
+   R_Date("Beta-262539",10640, 70)
+   {
+    z=256;
+    Outlier("BullCreekCarbon",1);
+   };
+   R_Date("Beta-262538",10750, 70)
+   {
+    z=239;
+    Outlier("BullCreekCarbon",1);
+   };
+   R_Date("Beta-180546",10850, 210)
+   {
+    z=238;
+    Outlier("BullCreekCarbon",1);
+   };
+   R_Date("Beta-262537",10410, 70)
+   {
+    z=226.5;
+    Outlier("BullCreekCarbon",1);
+   };
+   R_Date("Beta-184852",10400, 120)
+   {
+    z=224.5;
+    Outlier("BullCreekCarbon",1);
+   };
+   R_Date("Beta-184851",9850, 90)
+   {
+    z=156;
+    Outlier("BullCreekCarbon",1);
+   };
+   R_Date("Beta-191040",8670, 90)
+   {
+    z=119;
+    Outlier("BullCreekCarbon",1);
+   };
+   R_Date("Beta-184850",7660, 80)
+   {
+    z=82;
+    Outlier("BullCreekCarbon",1);
+   };
+   R_Date("Beta-191039",6200, 90)
+   {
+    z=55;
+    Outlier("BullCreekCarbon",1);
+   };
+   Boundary();
+  };
+  Page();
+  //
+  // DAISY CAVE MODEL
+  //
+  Outlier_Model("DaisyCaveCharcoal",Exp(1,-10,2),U(0,3),"t");
+  Sequence("Daisy Cave")
+  {
+   Boundary();
+   Phase("DaisyCaveLower Section")
+   {
+    R_Date("J: CAMS-14369", 11700, 70)
+    {
+     Outlier("DaisyCaveCharcoal",1);
+    };
+   };
+   Boundary();
+   Phase("DaisyCaveDark layer")
+   {
+    R_Date("I: CAMS-9096", 11180, 130)
+    {
+     Outlier("DaisyCaveCharcoal",1);
+    };
+   };
+   Boundary("Daisy_Cave_YDB_age");
+   Phase("DaisyCaveUpper section")
+   {
+    R_Date("G: CAMS-9094",10390,130)
+    {
+     Outlier("DaisyCaveCharcoal",1);
+    };
+    R_Date("F3: CAMS-8863",8810,80)
+    {
+     Outlier("DaisyCaveCharcoal",1);
+    };
+    R_Date("F1: CAMS-8867 ",8600,60)
+    {
+     Outlier("DaisyCaveCharcoal",1);
+    };
+    R_Date("E4: CAMS-8865",8040,60)
+    {
+     Outlier("DaisyCaveCharcoal",1);
+    };
+    R_Date("E1: CAMS-8866",7810,60)
+    {
+     Outlier("DaisyCaveCharcoal",1);
+    };
+    R_Date("C: CAMS-8862",6000,70)
+    {
+     Outlier("DaisyCaveCharcoal",1);
+    };
+    R_Date("A3: CAMS-9095",3110,60)
+    {
+     Outlier("DaisyCaveCharcoal",1);
+    };
+    R_Date("A1: CAMS-8864",3220,70)
+    {
+     Outlier("DaisyCaveCharcoal",1);
+    };
+   };
+   Boundary();
+  };
+  Page();
+  //
+  // INDIAN CREEK MODEL
+  //
+  Outlier_Model("IndianCreekCharcoal",Exp(1,-10,1.5),U(0,3),"t");
+  Sequence("Indian Creek")
+  {
+   Phase("Tephra")
+   {
+    R_Date("Beta-4951",11125,130)
+    {
+     Outlier("IndianCreekCharcoal",1);
+    };
+   };
+   Boundary();
+   Phase("IndianCreekReworked tephra")
+   {
+    Date("Indian_Creek_YDB_age");
+   };
+   Boundary();
+   Phase("IndianCreekUpper section")
+   {
+    R_Date("Beta-4619",10980,110)
+    {
+     Outlier("IndianCreekCharcoal",1);
+    };
+    R_Date("Beta-4620",10160,80)
+    {
+     Outlier("IndianCreekCharcoal",1);
+    };
+    R_Date("RL-7753",9870,130)
+    {
+     Outlier("IndianCreekCharcoal",1);
+    };
+    R_Date("Beta-7752",9290,120)
+    {
+     Outlier("IndianCreekCharcoal",1);
+    };
+    R_Date("Beta-7751",8340,100)
+    {
+     Outlier("IndianCreekCharcoal",1);
+    };
+    R_Date("Lab # n/a",7980,80)
+    {
+     Outlier("IndianCreekCharcoal",1);
+    };
+    R_Date("Beta-5117",7210,110)
+    {
+     Outlier("IndianCreekCharcoal",1);
+    };
+   };
+   Boundary();
+  };
+  Page();
+  //
+  // LAKE CUITZEO MODEL
+  //
+  Outlier_Model("LakeCuitzeoCarbon",Exp(1,-10,0.5),U(0,3),"t");
+  P_Sequence("Lake Cuitzeo",0.1,0.1)
+  {
+   Boundary();
+   R_Date("A 9770",42400,1000)
+   {
+    z=910;
+    Outlier("LakeCuitzeoCarbon",1);
+   };
+   R_Date("WW 3364",28600,140)
+   {
+    z=665;
+    Outlier();
+    color="blue";
+   };
+   R_Date("A 9359",32565 2885)
+   {
+    z=610;
+    Outlier("LakeCuitzeoCarbon",1);
+   };
+   R_Date("WW 8456",29880,280)
+   {
+    z=535;
+    Outlier("LakeCuitzeoCarbon",1);
+   };
+   R_Date("AZ 120",26800,900)
+   {
+    z=470;
+    Outlier("LakeCuitzeoCarbon",1);
+   };
+   R_Date("WW 8455",21440, 100)
+   {
+    z=440;
+    Outlier();
+    color="blue";
+   };
+   R_Date("WW 8454",22770,120)
+   {
+    z=400;
+    Outlier("LakeCuitzeoCarbon",1);
+   };
+   R_Date("WW 6423",29490,190)
+   {
+    z=380;
+    Outlier();
+    color="blue";
+   };
+   R_Date("WW 3576",28289,120)
+   {
+    z=375;
+    Outlier();
+    color="blue";
+   };
+   R_Date("WW 6422",23870,100)
+   {
+    z=365;
+    Outlier();
+    color="blue";
+   };
+   R_Date("T11-M47",15500,130)
+   {
+    z=335;
+    Outlier("LakeCuitzeoCarbon",1);
+   };
+   R_Date("WW 3375",32940,190)
+   {
+    z=310;
+    Outlier();
+    color="blue";
+   };
+   Date("LakeCuitzeoYDB_base")
+   {
+    z=282.5;
+    Outlier("LakeCuitzeoCarbon",1);
+   };
+   Date("Lake_Cuitzeo_YDB_layer")
+   {
+    z=280.0;
+    Outlier("LakeCuitzeoCarbon",1);
+   };
+   Date("LakeCuitzeoYDB_top")
+   {
+    z=277.5;
+    Outlier("LakeCuitzeoCarbon",1);
+   };
+   R_Date("OS-71325",10550,35)
+   {
+    z=277;
+    Outlier("LakeCuitzeoCarbon",1);
+   };
+   R_Date("WW 3363",27360,130)
+   {
+    z=275;
+    Outlier();
+    color="blue";
+   };
+   R_Date("OS 7133C",21600,100)
+   {
+    z=255;
+    Outlier();
+    color="blue";
+   };
+   R_Date("WW 3362",21730,70)
+   {
+    z=245;
+    Outlier();
+    color="blue";
+   };
+   R_Date("T7-M31",17605,215)
+   {
+    z=225;
+    Outlier();
+    color="blue";
+   };
+   R_Date("WW 3361",14720,50)
+   {
+    z=205;
+    Outlier();
+    color="blue";
+   };
+   R_Date("A 9354",8830,215)
+   {
+    z=195;
+    Outlier("LakeCuitzeoCarbon",1);
+   };
+   R_Date("A 9353",6165,70)
+   {
+    z=135;
+    Outlier("LakeCuitzeoCarbon",1);
+   };
+   R_Date("A 9352",1755,115)
+   {
+    z=85;
+    Outlier("LakeCuitzeoCarbon",1);
+   };
+   R_Date("A 9351",930,55)
+   {
+    z=70;
+    Outlier("LakeCuitzeoCarbon",1);
+   };
+   Boundary();
+  };
+  Page();
+  //
+  // LAKE HIND MODEL
+  //
+  Outlier_Model("LakeHindCarbon",Exp(1,-10,5),U(0,4),"t");
+  Sequence("Lake Hind")
+  {
+   Boundary("LakeHindBottom");
+   Sequence("LakeHindGlacial")
+   {
+    R_Date("Beta-375047",36830,310)
+    {
+     Outlier("LakeHindCarbon",1);
+    };
+   };
+   Boundary();
+   Sequence("LakeHindEnd Glacial")
+   {
+    R_Date("Lake_Hind_YDB_UCIAMS_29317",10610,25)
+    {
+     Outlier("LakeHindCarbon",1);
+    };
+   };
+   Boundary();
+   Sequence("LakeHindPeat")
+   {
+    R_Date("Beta 116994",10420,70)
+    {
+     Outlier("LakeHindCarbon",1);
+    };
+    R_Date("TO-7692",9250,90)
+    {
+     Outlier("LakeHindCarbon",1);
+    };
+    R_Date("Beta 111142",6700,70)
+    {
+     Outlier("LakeHindCarbon",1);
+    };
+    R_Date("Beta 165741",5760,50)
+    {
+     Outlier("LakeHindCarbon",1);
+    };
+    R_Date("Beta 165740",5780,50)
+    {
+     Outlier("LakeHindCarbon",1);
+    };
+    R_Date("Beta 109530",5350,50)
+    {
+     Outlier("LakeHindCarbon",1);
+    };
+    R_Date("Beta 109900",4090,70)
+    {
+     Outlier("LakeHindCarbon",1);
+    };
+    R_Date("Beta 109529",3250,70)
+    {
+     Outlier("LakeHindCarbon",1);
+    };
+    R_Date("Beta 111143",2500,40)
+    {
+     Outlier("LakeHindCarbon",1);
+    };
+   };
+   Boundary("LakeHindTop");
+  };
+  Page();
+  //
+  // LINDENMEIER MODEL
+  //
+  Outlier_Model("LindenmeierCarbon",Exp(1,-10,1),U(0,3),"t");
+  Sequence("Lindenmeier")
+  {
+   Boundary();
+   Phase("LindenmeierLevel B")
+   {
+    R_Date("AA-51988",12170,80)
+    {
+     Outlier("LindenmeierCarbon",1);
+    };
+   };
+   Boundary();
+   Phase("LindenmeierLevel C")
+   {
+    Date("Stratum age")
+    {
+     Outlier("LindenmeierCarbon",1);
+    };
+   };
+   R_Date("Lindenmeier_YDB_I_141",10780,135)
+   {
+    Outlier("LindenmeierCarbon",1);
+   };
+   Phase("LindenmeierLevel D: Black Mat")
+   {
+    R_Date("GX-1282",11200,400)
+    {
+     Outlier("LindenmeierCarbon",1);
+    };
+    R_Date("TO-337",10560,110)
+    {
+     Outlier("LindenmeierCarbon",1);
+    };
+    R_Date("TO-342",10500,80)
+    {
+     Outlier("LindenmeierCarbon",1);
+    };
+    R_Date("TO-338",10040,80)
+    {
+     Outlier("LindenmeierCarbon",1);
+    };
+    R_Date("TO-339",9880,100)
+    {
+     Outlier("LindenmeierCarbon",1);
+    };
+    R_Date("TO-341",9690,60)
+    {
+     Outlier("LindenmeierCarbon",1);
+    };
+    R_Date("TO-340",9330,70)
+    {
+     Outlier("LindenmeierCarbon",1);
+    };
+   };
+   Boundary();
+   Phase("LindenmeierLevel F")
+   {
+    R_Date("TO-344",10060,100)
+    {
+     Outlier();
+     color="blue";
+    };
+    R_Date("A-749 AB",9440,180)
+    {
+     Outlier("LindenmeierCarbon",1);
+    };
+   };
+   Boundary();
+  };
+  Page();
+  //
+  // LINGEN MODEL
+  //
+  Outlier_Model("LingenCharcoal",Exp(1,-10,0.5),U(0,3),"t");
+  Sequence("Lingen")
+  {
+   Boundary("LingenBottom");
+   Sequence("LingenAllerod")
+   {
+    R_Date("UCIAMS 46302",11310,60)
+    {
+     Outlier("LingenCharcoal",1);
+    };
+    R_Date("Lingen_YDB_Beta_369246",10870,40)
+    {
+     Outlier("LingenCharcoal",1);
+    };
+   };
+   Boundary();
+  };
+  Page();
+  //
+  // LOMMEL MODEL
+  //
+  Outlier_Model("LommelGeneral",Exp(1,-10,3),U(0,3),"t");
+  Sequence("Lommel")
+  {
+   Boundary();
+   Phase("LommelEnd Glacial")
+   {
+    C_Date("GLL-080704",calBP(2012-15300),1100)
+    {
+     Outlier("LommelGeneral",1);
+    };
+    C_Date("GLL-080714",calBP(2012-14500),1100)
+    {
+     Outlier("LommelGeneral",1);
+    };
+   };
+   Boundary();
+   Phase("LommelB-A Coversands")
+   {
+    C_Date("GLL-080708",calBP(2012-14000),1000)
+    {
+     Outlier("LommelGeneral",1);
+    };
+    C_Date("GLL-080713",calBP(2012-13700),1000)
+    {
+     Outlier("LommelGeneral",1);
+    };
+    C_Date("GLL-080716",calBP(2012-13300),1000)
+    {
+     Outlier("LommelGeneral",1);
+    };
+    C_Date("GLL-080703",calBP(2012-13300),900)
+    {
+     Outlier("LommelGeneral",1);
+    };
+    C_Date("GLL-080715",calBP(2012-12700),900)
+    {
+     Outlier("LommelGeneral",1);
+    };
+    C_Date("GLL-080707",calBP(2012-12400),900)
+    {
+     Outlier("LommelGeneral",1);
+    };
+   };
+   Boundary();
+   Phase("Usselo Horizon")
+   {
+    R_Date("UCIAMS 46303",11480,100)
+    {
+     Outlier("LommelGeneral",1);
+    };
+    C_Date("GLL-080712",calBP(2012-12400),900)
+    {
+     Outlier("LommelGeneral",1);
+    };
+    C_Date("GLL-080711",calBP(2012-10600),700)
+    {
+     Outlier();
+     color="blue";
+    };
+   };
+   Boundary("Lommel_YDB_age");
+   Phase("LommelCoversands II")
+   {
+    C_Date("GLL-080706",calBP(2012-12300),800)
+    {
+     Outlier("LommelGeneral",1);
+    };
+    C_Date("GLL-080701",calBP(2012-12000),900)
+    {
+     Outlier("LommelGeneral",1);
+    };
+    C_Date("GLL-080705",calBP(2012-11700),800)
+    {
+     Outlier("LommelGeneral",1);
+    };
+    C_Date("GLL-080702",calBP(2012-11600),800)
+    {
+     Outlier("LommelGeneral",1);
+    };
+    C_Date("GLL-080710",calBP(2012-11500),800)
+    {
+     Outlier("LommelGeneral",1);
+    };
+    C_Date("GLL-080709",calBP(2012-11000),700)
+    {
+     Outlier("LommelGeneral",1);
+    };
+   };
+   Boundary();
+  };
+  Page();
+  //
+  // MELROSE MODEL
+  //
+  Outlier_Model("MelroseGeneral",Exp(1,-10,10),U(0,3),"t");
+  Sequence("Melrose")
+  {
+   Boundary();
+   Phase("MelrosePost-glacial")
+   {
+    C_Date("Melrose_YDB_LB860b",calBP(2012-11701),1846)
+    {
+     Outlier("MelroseGeneral",1);
+    };
+    R_Date("Beta-87422",-5,25)
+    {
+     Outlier();
+     color="blue";
+    };
+    R_Date("Beta-368791",850,30)
+    {
+     Outlier("MelroseGeneral",1);
+    };
+   };
+   Boundary();
+  };
+  Page();
+  //
+  // MUCUNUQUE MODEL
+  //
+  COMBINE("Mucunuque_YDB_age")
+  {
+   R_Date("Valle Laguna Victoria",11045, 90);
+   R_Date("Paramo de Miranda",10954, 163);
+   R_Date("Lake Chonita",11005, 45);
+   R_Date("Laguna Verde Alta",11038, 165);
+   C_Date("Laguna de Los Anteojos",calBP(1950-12924), 80);
+  };
+  Sequence("Mucunuque (MUM7b)")
+  {
+   Boundary();
+   R_Date("TO-9278c",11850,180);
+   R_Date("TO-9011",11760,80);
+   R_Date("TO-9278a",11440,100);
+   Date("=Mucunuque_YDB_age");
+   Boundary();
+  };
+  Page();
+  //
+  // MURRAY SPRINGS MODEL
+  //
+  Outlier_Model("MurraySpringsGeneral",Exp(1,-10,1),U(0,3),"t");
+  Sequence("Murray Springs")
+  {
+   Boundary();
+   Phase("MurraySpringsE")
+   {
+    R_Date("A-897",21200, 500)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("I-4564",19620, 380)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("I-4562",12310, 170)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("I-4565",10430, 160)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("I-4563",9780, 1400)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+   };
+   Boundary();
+   Phase("MurraySpringsF1")
+   {
+    R_Date("TX-1406",12940, 390)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("SMU-190",12820, 450)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("SMU-18",11190, 180)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("SMU-43",11160, 110)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("TX-1413",11080, 180)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("SMU-42",10840, 140)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("SMU-41",10840, 70)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("TX-1459",10710, 160)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("SMU-17",8770, 80)
+    {
+     Outlier();
+     color="blue";
+    };
+   };
+   Boundary("MurraySpringsClovis_base");
+   Phase("F2/D")
+   {
+    R_Date("TX-1044",12600, 2440)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("A-1045",10760, 100)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("TX-1045",10260, 140)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+   };
+   Boundary("MurraySpringsClovis_top");
+   Phase("MurraySpringsF2, Black mat at base")
+   {
+    R_Date("AA-26212",10628, 60)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("A-989b",10360, 90)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("AA-26211",10325, 44)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("A-977",10250, 170)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("AA-26210",9823, 46)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("A-969B",9270, 800)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("A-969A",8900, 400)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("I-4566",8830, 170)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+   };
+   Boundary();
+   Phase("MurraySpringsF3+G1")
+   {
+    R_Date("Tx-972",8160, 130)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("Tx-971",7920, 150)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("A-905A",5750, 250)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("Tx-936",5630, 130)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+    R_Date("A-905B",5520, 200)
+    {
+     Outlier("MurraySpringsGeneral",1);
+    };
+   };
+   Boundary();
+  };
+  Sequence("Murray Springs2")
+  {
+   Boundary();
+   Date("=MurraySpringsClovis_base");
+   Date("Murray_Springs_YDB_layer");
+   Date("=MurraySpringsClovis_top");
+   Boundary();
+  };
+  Page();
+  //
+  // OMMEN MODEL
+  //
+  Outlier_Model("OmmenCharcoal",Exp(1,-10,1.5),U(0,3),"t");
+  Sequence("Ommen")
+  {
+   Boundary();
+   Phase("OmmenAllerod")
+   {
+    R_Date("UCIAMS 46307",11440,35)
+    {
+     Outlier("OmmenCharcoal",1);
+    };
+   };
+   Boundary("Ommen_YDB_age");
+   Phase("OmmenYounger Dryas")
+   {
+    Date("OmmenStratum age");
+   };
+   Boundary();
+   Phase("OmmenHolocene")
+   {
+    R_Date("Beta-369946",9640,40)
+    {
+     Outlier("OmmenCharcoal",1);
+    };
+   };
+   Boundary();
+  };
+  Page();
+  //
+  // SANTA MAIRA MODEL
+  //
+  Outlier_Model("SantaMairaGeneral",Exp(1,-10,0.5),U(0,3),"t");
+  Sequence("Santa Maira")
+  {
+   Boundary();
+   Phase("SantaMairapre-Younger Dryas")
+   {
+    R_Date("Beta-75226",14310, 190)
+    {
+     Outlier("SantaMairaGeneral",1);
+    };
+    R_Date("UCIAMS-52623",12615, 99)
+    {
+     Outlier("SantaMairaGeneral",1);
+    };
+    R_Date("Beta-156023",11920, 40)
+    {
+     Outlier("SantaMairaGeneral",1);
+    };
+    R_Date("Beta-131579",11620, 150)
+    {
+     Outlier("SantaMairaGeneral",1);
+    };
+    R_Date("Beta-149948",11590, 70)
+    {
+     Outlier("SantaMairaGeneral",1);
+    };
+   };
+   Boundary();
+   Phase("SantaMairaYDB")
+   {
+    R_Date("Santa_Maira_YDB_Beta_75225",11020, 140)
+    {
+     Outlier("SantaMairaGeneral",1);
+    };
+   };
+   Boundary();
+   Phase("SantaMairaHolocene")
+   {
+    R_Date("Beta-158014",9820, 40)
+    {
+     Outlier("SantaMairaGeneral",1);
+    };
+    R_Date("Beta-131578",9760, 40)
+    {
+     Outlier("SantaMairaGeneral",1);
+    };
+    R_Date("Beta-156021",9370, 40)
+    {
+     Outlier("SantaMairaGeneral",1);
+    };
+    R_Date("Beta-156022",9220, 40)
+    {
+     Outlier("SantaMairaGeneral",1);
+    };
+    R_Date("Beta-75224",5640, 140)
+    {
+     Outlier("SantaMairaGeneral",1);
+    };
+   };
+   Boundary();
+  };
+  Page();
+  //
+  // SHERIDEN CAVE
+  //
+  Outlier_Model("SheridenCarbon",Exp(1,-10,0.5),U(0,3),"t");
+  Sequence("Sheriden Cave")
+  {
+   Boundary();
+   Phase("Unit 5A, lower")
+   {
+    R_Date("Beta-127908b-(E)",12840,100)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("Beta-127908a-(E)",12590,450)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("Beta-127907-(E)",12520,170)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("Beta-139687-(E)",11860,40)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("CAMS-12845-(E)",11610 70)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("CAMS-12839-(E)",11570,70)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("CAMS-33968-(E)",11570,50)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("CAMS-12837-(E)",11480,60)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+   };
+   Boundary("SheridenYDB_base");
+   Phase("SheridenUnit 5A upper, charcoal layer")
+   {
+    R_Date("Beta-127910",10960,60)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("Beta-127909",10840,80)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("UCI-38249-(C)",10915,30)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+   };
+   Boundary("SheridenYDB_top");
+   Phase("SheridenUnit 5B")
+   {
+    R_Date("AA-21711",13120, 80)
+    {
+     Outlier();
+     color="blue";
+    };
+    R_Date("PITT-0982",11710, 220)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("CAMS-33970",11130, 60)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("CAMS-10349-(E)",11060, 60)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("AA-21712",10470, 70)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+   };
+   Boundary();
+   Phase("SheridenUnit 5C")
+   {
+    R_Date("Beta-117607",10970,70)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("Beta-117601",10940,70)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("Beta-117602",10850,70)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("CAMS-26783-(E)",10850,60)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("AA-21710",10680,80)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("Beta-117606",10620,70)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("Beta-117603",10600,60)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("Beta-117605",10570,70)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("Beta-117604",10550,70)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("Beta-139686",10440,40)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+   };
+   Boundary();
+   Phase("SheridenUnit 6")
+   {
+    R_Date("AA-21706",10020,115)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("AA-21705",9775,70)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("CAMS-24127",9190,60)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+    R_Date("CAMS-24126",9170,60)
+    {
+     Outlier("SheridenCarbon",1);
+    };
+   };
+   Boundary();
+  };
+  COMBINE("Sheriden_Cave_YDB_layer")
+  {
+   Date("=Beta_127909")
+   {
+    Outlier("SheridenCarbon",1);
+   };
+   Date("=Beta_127910")
+   {
+    Outlier("SheridenCarbon",1);
+   };
+  };
+  Page();
+  //
+  // TALEGA MODEL
+  //
+  Outlier_Model("TalegaCharcoal",Exp(3,-10,0),U(0,3),"t");
+  Sequence("Talega")
+  {
+   Boundary();
+   Phase("Talega15-13")
+   {
+    R_Date("Beta-196153",14980,70)
+    {
+     Outlier("TalegaCharcoal",1);
+    };
+    R_Date("Beta-192337",13070,40)
+    {
+     Outlier("TalegaCharcoal",1);
+    };
+    R_Date("Beta-192338",12310,10)
+    {
+     Outlier("TalegaCharcoal",1);
+    };
+   };
+   Boundary();
+   Phase("Talega12")
+   {
+    R_Date("Talega_YDB_Beta_196150",11070,50)
+    {
+     Outlier("TalegaCharcoal",1);
+    };
+    R_Date("Beta-196151",11060,60)
+    {
+     Outlier("TalegaCharcoal",1);
+    };
+   };
+   Boundary();
+   Phase("Talega11-1")
+   {
+    R_Date("Beta-196155",10540,50)
+    {
+     Outlier("TalegaCharcoal",1);
+    };
+    R_Date("Beta-196154",9830,50)
+    {
+     Outlier("TalegaCharcoal",1);
+    };
+    R_Date("Beta-196152",9600,50)
+    {
+     Outlier("TalegaCharcoal",1);
+    };
+    R_Date("Beta 196156",690, 40)
+    {
+     Outlier("TalegaCharcoal",1);
+    };
+    R_Date("Beta 229098",1480, 40)
+    {
+     Outlier("TalegaCharcoal",1);
+    };
+    R_Date("Beta 227775",780, 40)
+    {
+     Outlier("TalegaCharcoal",1);
+    };
+    R_Date("Beta 229097",2190, 40)
+    {
+     Outlier("TalegaCharcoal",1);
+    };
+   };
+   Boundary();
+  };
+  Page();
+  //
+  // TOPPER MODEL
+  //
+  Outlier_Model("TopperGeneral",Exp(1,-10,0.5),U(0,3),"t");
+  Sequence("Topper")
+  {
+   Boundary();
+   Phase("TopperLevel 2b")
+   {
+    C_Date("UIC764",calBP(2009-14800),1500)
+    {
+     Outlier("TopperGeneral",1);
+    };
+    C_Date("UIC837",calBP(2009-14000),1200)
+    {
+     Outlier("TopperGeneral",1);
+    };
+   };
+   Boundary();
+   Phase("Topper3b base, Clovis")
+   {
+    C_Date("UIC763",calBP(2009-13200),1300)
+    {
+     Outlier("TopperGeneral",1);
+    };
+    C_Date("UIC1114",calBP(2009-13000),900)
+    {
+     Outlier("TopperGeneral",1);
+    };
+    R_Date("Topper_YDB_AA100294",10958, 65)
+    {
+     Outlier("TopperGeneral",1);
+    };
+   };
+   Boundary();
+   Phase("Topper3b upper")
+   {
+    C_Date("UIC1115",calBP(2009-11000),800)
+    {
+     Outlier("TopperGeneral",1);
+    };
+    C_Date("UIC836",calBP(2009-8000),800)
+    {
+     Outlier("TopperGeneral",1);
+    };
+    C_Date("UIC1229",calBP(2009-8000),500)
+    {
+     Outlier("TopperGeneral",1);
+    };
+    C_Date("UIC835",calBP(2009-7600),900)
+    {
+     Outlier("TopperGeneral",1);
+    };
+    C_Date("UIC782",calBP(2009-7300),800)
+    {
+     Outlier("TopperGeneral",1);
+    };
+    C_Date("UIC1228",calBP(2009-4300),300)
+    {
+     Outlier("TopperGeneral",1);
+    };
+   };
+   Boundary();
+  };
+  Page();
+  //
+  ////
+  ////// SYNCHRONEITY TEST MODEL
+  ////
+  //
+  Sequence("YDB SYNCHRONICITY")
+  {
+   Boundary("Start");
+   Phase()
+   {
+    Date("=Ommen_YDB_age");
+    Date("=Mucunuque_YDB_age");
+    Date("=Melrose_YDB_LB860b");
+    Date("=Lommel_YDB_age");
+    Date("=Lake_Cuitzeo_YDB_layer");
+    Date("=Blackville_YDB_age_LB859");
+    Label("YDB: LOWER QUALITY");
+    Date("=Topper_YDB_AA100294");
+    Date("=Talega_YDB_Beta_196150");
+    Date("=Santa_Maira_YDB_Beta_75225");
+    Date("=Murray_Springs_YDB_layer");
+    Date("=Lindenmeier_YDB_I_141");
+    Date("=Indian_Creek_YDB_age");
+    Date("=Blackwater_YDB_age");
+    Date("=Barber_Creek_YDB_age_UW_1908");
+    Label("YDB: MEDIUM QUALITY");
+    Date("=Sheriden_Cave_YDB_layer");
+    Date("=Lingen_YDB_Beta_369246");
+    Date("=Lake_Hind_YDB_UCIAMS_29317");
+    Date("=Daisy_Cave_YDB_age");
+    Date("=Bull_Creek_YDB_layer");
+    Date("=Big_Eddy_YDB_layer");
+    Date("=Aalsterhut_YDB_layer");
+    Date("=Arlington_Cyn_YDB_layer");
+    Date("=Abu_Hureyra_UCIAMS_105429");
+    Label("YDB: HIGH QUALITY");
+    C_Date("Meerfelder Maar",calBP(1950-12680),127);
+    C_Date("Hulu speleothems, CHN",calBP(2000-12820),60);
+    R_Date("Late glacial tree-rings, GER",10980,20);
+    C_Date("Cariaco Basin varves",calBP(2000-12820),30);
+    C_Date("GISP2 platinum peak",calBP(2000-12887),260);
+    C_Date("GISP2 ice model",calBP(2000-12890),260);
+    C_Date("GRIP GICC05 ice model",calBP(2000-12896),138);
+    Label("AGE OF YOUNGER DRYAS ONSET");
+   };
+   Boundary("End");
+  };
+  Page();
+  Difference("L","End","Start");
+ };
